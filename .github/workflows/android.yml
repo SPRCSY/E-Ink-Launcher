@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ORG_GRADLE_PROJECT_CMB_STORE_PASSWORD: ${{ secrets.CMB_STORE_PASSWORD }}
-      ORG_GRADLE_PROJECT_CMB_KEY_PASSWORD: ${{ secrets.CMB_KEY_PASSWORD }}
+      ORG_GRADLE_PROJECT_STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+      ORG_GRADLE_PROJECT_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
     
     steps:
     - uses: actions/checkout@v4
