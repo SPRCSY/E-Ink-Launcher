@@ -8,7 +8,7 @@ android {
     enableKotlin = false
 
     defaultConfig {
-        applicationId = "cn.modificator.launcher"
+        applicationId = "cn.wrcloud.einklauncher"
         minSdk = 14
         targetSdk = 36
         versionCode = 30
