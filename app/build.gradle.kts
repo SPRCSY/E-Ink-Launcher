@@ -19,12 +19,12 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file("release.jks")
+            storeFile = file("eink-launcher-release.jks")
             storePassword =
-                (project.findProperty("CMB_STORE_PASSWORD") as String?) ?: ""
-            keyAlias = "cmb"
+                (project.findProperty("STORE_PASSWORD") as String?) ?: ""
+            keyAlias = "eink-launcher"
             keyPassword =
-                (project.findProperty("CMB_KEY_PASSWORD") as String?) ?: ""
+                (project.findProperty("KEY_PASSWORD") as String?) ?: ""
         }
     }
 
@@ -32,7 +32,7 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            signingConfig = signingConfigs.getByName("eink-launcher-release")
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
