@@ -17,10 +17,22 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("release.jks")
+            storePassword =
+                (project.findProperty("CMB_STORE_PASSWORD") as String?) ?: ""
+            keyAlias = "cmb"
+            keyPassword =
+                (project.findProperty("CMB_KEY_PASSWORD") as String?) ?: ""
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
